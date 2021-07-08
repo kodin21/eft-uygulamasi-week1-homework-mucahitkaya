@@ -13,20 +13,19 @@
 
         <div id="choose-part social-distance">
           <label class="label label-position">Hesap Seç:</label>
-          <select name="cars" id="cars">
-            <option value="volvo">6774673787</option>
-            <option value="saab">26726262626</option>
+          <select name="cars" id="accounts" onclick="bakiyeCheck()">
+            <option value="starter" selected>Hesaplar.. </option>
+            <option value="account1" id="iban1">trxx yyyy xxxx yyyy</option>
+            <option value="account2" id="iban1">trxx yyyy xxxx yyyx</option>
+            <option value="account3" id="iban1">trxx yyyy xxxx xyyx</option>
           </select>
         </div>
 
-        <div id="choose-part social-distance">
-            <label class="label label-position">Hesap Ekle:</label>
-            <input type="text" placeholder="Hesabı giriniz..">
-        </div>
-        <label class="label label-position label-hover" onclick="myFunction()">IBAN seçme ekranı için tıklayınız</label>
+        
+        <label class="label label-position label-hover" onclick="accountChoose()">IBAN seçme ekranı için tıklayınız</label>
         <div id="time-remain"></div>  
     </div>
 
-    <script src="/index.js"></script>
+    <script type="module" src="/mainPage.js"></script>
   </body>
 </html>
