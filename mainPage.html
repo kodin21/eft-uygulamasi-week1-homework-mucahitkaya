@@ -12,26 +12,25 @@
         <div><h3 class="h3-title-prop">ETF işlemi</h3></div>
 
         <div id="choose-part social-distance">
-          <label class="label label-position">Hesap Seç:</label>
-          <select name="cars" id="accounts" onblur="bakiyeCheck()">
-            <option value="starter" selected>Hesaplar.. </option>
-            <option value="trxx yyyy xxxx yyyy" id="iban1">trxx yyyy xxxx yyyy</option>
-            <option value="trxx yyyy xxxx yyyx" id="iban1">trxx yyyy xxxx yyyx</option>
-            <option value="trxx yyyy xxxx xyyx" id="iban1">trxx yyyy xxxx xyyx</option>
-          </select>
-          <span class="label label-position" style="display: block;">Seçtiğiniz IBAN:
-          <p id="selected-iban"></p>
-          </span>
+            <label class="label label-position">Hesap Seç:</label>
+            <select name="cars" id="accounts" onblur="bakiyeCheck()">
+              <option value="starter" selected>Hesaplar.. </option>
+              <option value="trxx yyyy xxxx yyyy" id="iban1">trxx yyyy xxxx yyyy</option>
+              <option value="trxx yyyy xxxx yyyx" id="iban1">trxx yyyy xxxx yyyx</option>
+              <option value="trxx yyyy xxxx xyyx" id="iban1">trxx yyyy xxxx xyyx</option>
+            </select>
         
         <div id="time-remain"></div>  
         </div>
+
         <div id="choose-part social-distance">
-          <label class="label label-position">Gönderilecek Hesaplar:</label>
-         <input id="iban-input"type="text" placeholder="Para gönderilecek IBAN" oninput="ibanInput()" >
-         <span class="label label-position" style="display: block;">Seçtiğiniz IBAN:<p id="gönderilecek-iban"></p></span>
-         <input id="para-miktari" type="text" placeholder="Gönderilecek miktar" oninput="göndermeKosullari()">
-         <!-- <button id="para-gonder-btn"
-         >Gönder</button> -->
+          
+            <label class="label label-position">IBAN girin:</label>
+            <input id="iban-input"type="text" placeholder="Para gönderilecek IBAN" >
+            <button  id="onay" onclick="gondermeKosullari()" >Hesaplari onaylıyorum</button >
+              <input id="money"type="text" placeholder="Gönderilecek Miktar" >
+              <button id="money-gonder" style="display: none;" onclick="sendingFuntion()">Gonder</button>
+          
         </div>
 
       </div>
@@ -39,3 +38,5 @@
     <script src="./mainPage.js"></script>
   </body>
 </html>
+<!-- <button id="para-gonder-btn" style="display: none;"
+         >Gönder</button> -->

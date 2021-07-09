@@ -1,70 +1,58 @@
 const accounts = [
-    {
-        iban: 'trxx yyyy xxxx yyyy',
-        balance: 100,
-    },
-    {
-        iban: 'trxx yyyy xxxx yyyx',
-        balance: 5040,
-    },
-    {
-        iban: 'trxx yyyy xxxx xyyx',
-        balance: 10594,
-    }
+  {
+    iban: "trxx yyyy xxxx yyyy",
+    balance: 100,
+  },
+  {
+    iban: "trxx yyyy xxxx yyyx",
+    balance: 5040,
+  },
+  {
+    iban: "trxx yyyy xxxx xyyx",
+    balance: 10594,
+  },
 ];
 const user = {
-    name: 'Jane',
-    surname: 'Doe',
-    accounts
+  name: "Jane",
+  surname: "Doe",
+  accounts,
 };
 
-function bakiyeCheck(){
-    
-    const selectedIban= document.getElementById("accounts").value
-    //account dediğimiz şey array değerleri array değerlerinin de değerelerine
-    //ulaşabilmek için . yaparak ulaştık
-    const balanceOfSelectedIBan=accounts.find(account=>account.iban==selectedIban)
-    console.log(balanceOfSelectedIBan.balance);
-    document.getElementById("selected-iban").innerText=selectedIban;
-    
-    
+function bakiyeCheck() {
+  const selectedIban = document.getElementById("accounts").value;
+  const balanceOfSelectedIBan = accounts.find(
+    (account) => account.iban == selectedIban
+  );
+  console.log(balanceOfSelectedIBan.balance);
 }
 
-function ibanInput(){
-    const ibanValue =document.getElementById("iban-input").value;
-    document.getElementById("gönderilecek-iban").innerText=ibanValue;
-    
-}
-function göndermeKosullari(){
-    const selectedIban= document.getElementById("accounts").value
-    const inputValue=document.getElementById("para-miktari").value;
-    console.log(inputValue);
-    const balanceOfSelectedIBan=accounts.find(account=>account.iban==selectedIban)
-    if(inputValue>balanceOfSelectedIBan.balance)alert("Keşke be agam");
-    else if()
-    
-}
+function gondermeKosullari() {
+  const inputValue = document.getElementById("iban-input").value;
+  const selectedIban = document.getElementById("accounts").value;
+  const money = document.getElementById("money");
+  const gonder = document.getElementById("money-gonder");
 
-/* 
-money.addEventListener("blur",()=> {
+  const amountOfMoney = money.value;
 
-    const selectedIban=document.querySelector("#ibans");
-
-    const selectedAccount= accounts.find(account=>account.iban==selectedIban.value)
-    console.log(selectedAccount.balance);
-
-    if(money.value <= selectedAccount.balance ){
-        btn.disabled=false;
+  const IBANBalance = accounts.find((account) => account.iban == selectedIban);
+  if (selectedIban != "" && inputValue != "") {
+    if (amountOfMoney != "" && amountOfMoney > IBANBalance.balance) {
+      alert("Maalesef Bakiye Yetersiz!");
+      console.log("ğ");
+      gonder.style.display = "none";
+    } else if (amountOfMoney != "" && amountOfMoney <= IBANBalance.balance) {
+      gonder.style.display = "block";
     }
-    else{
-        alert("yüksek rakam girdiniz");
+  }
+}
 
-    }
+function sendingFuntion() {
+  const selectedIban = document.getElementById("accounts").value;
+  const money = document.getElementById("money");
+  const amountOfMoney = money.value;
+  const IBANBalance = accounts.find((account) => account.iban == selectedIban);
 
- })*/
-
-
-
-
-
-
+  if (amountOfMoney != "" && amountOfMoney <= 500) {
+    alert("İşlem Başarılı");
+  }
+}
