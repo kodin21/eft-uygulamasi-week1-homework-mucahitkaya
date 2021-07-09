@@ -9,23 +9,33 @@
   <body>
     <div id="main-page">
       <div id="mini-page" class="centered">
-        <div><h3 class="h3-title-prop">Hangi Hesaptan Gönderilecek</h3></div>
+        <div><h3 class="h3-title-prop">ETF işlemi</h3></div>
 
         <div id="choose-part social-distance">
           <label class="label label-position">Hesap Seç:</label>
-          <select name="cars" id="accounts" onclick="bakiyeCheck()">
+          <select name="cars" id="accounts" onblur="bakiyeCheck()">
             <option value="starter" selected>Hesaplar.. </option>
-            <option value="account1" id="iban1">trxx yyyy xxxx yyyy</option>
-            <option value="account2" id="iban1">trxx yyyy xxxx yyyx</option>
-            <option value="account3" id="iban1">trxx yyyy xxxx xyyx</option>
+            <option value="trxx yyyy xxxx yyyy" id="iban1">trxx yyyy xxxx yyyy</option>
+            <option value="trxx yyyy xxxx yyyx" id="iban1">trxx yyyy xxxx yyyx</option>
+            <option value="trxx yyyy xxxx xyyx" id="iban1">trxx yyyy xxxx xyyx</option>
           </select>
+          <span class="label label-position" style="display: block;">Seçtiğiniz IBAN:
+          <p id="selected-iban"></p>
+          </span>
+        
+        <div id="time-remain"></div>  
+        </div>
+        <div id="choose-part social-distance">
+          <label class="label label-position">Gönderilecek Hesaplar:</label>
+         <input id="iban-input"type="text" placeholder="Para gönderilecek IBAN" oninput="ibanInput()" >
+         <span class="label label-position" style="display: block;">Seçtiğiniz IBAN:<p id="gönderilecek-iban"></p></span>
+         <input id="para-miktari" type="text" placeholder="Gönderilecek miktar" oninput="göndermeKosullari()">
+         <!-- <button id="para-gonder-btn"
+         >Gönder</button> -->
         </div>
 
-        
-        <label class="label label-position label-hover" onclick="accountChoose()">IBAN seçme ekranı için tıklayınız</label>
-        <div id="time-remain"></div>  
-    </div>
+      </div>
 
-    <script type="module" src="/mainPage.js"></script>
+    <script src="./mainPage.js"></script>
   </body>
 </html>
