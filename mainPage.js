@@ -40,6 +40,7 @@ function gondermeKosullari() {
       alert("Maalesef Bakiye Yetersiz!");
       console.log("ğ");
       gonder.style.display = "none";
+      location.reload();
     } else if (amountOfMoney != "" && amountOfMoney <= IBANBalance.balance) {
       gonder.style.display = "block";
     }
@@ -47,12 +48,24 @@ function gondermeKosullari() {
 }
 
 function sendingFuntion() {
-  const selectedIban = document.getElementById("accounts").value;
   const money = document.getElementById("money");
   const amountOfMoney = money.value;
-  const IBANBalance = accounts.find((account) => account.iban == selectedIban);
 
   if (amountOfMoney != "" && amountOfMoney <= 500) {
     alert("İşlem Başarılı");
+    location.reload();
+  } else if (amountOfMoney != "" && amountOfMoney > 500) {
+    for (let q = 0; q < 3; q++) {
+      const inputPassword = prompt(
+        "Lutfen Telefonunuza gelen Şifreyi Giriniz",
+        "Buraya yazınız lütfen"
+      );
+      if (inputPassword == "1234") {
+        alert("Şifre Başarılı. Gönderme İşlemi Tamamlandı");
+
+        break;
+      } else alert("Şifre Doğru Değil!");
+      q === 2 ? alert("Hesabınız bloke oldu") : console.log("ğ");
+    }
   }
 }
