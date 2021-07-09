@@ -1,3 +1,15 @@
+/*------NOTES---- 
+1)Datayı ve gereken fonksiyonları moduler yapı olarak yapmaya çalıştım
+import ve export kavramını aladım ama bu programda başaramadım
+2)Şifre 3 defadan fazla girilince istenilen mesaj veriliyor
+ama sayfa yenilenmiyor(henüz)
+3)Geri sayım fonsiyonu için çok çabaladım, fonksiyonu yazma ve geri sayımı
+yapmada sıkıntı yok ama fonksiyon çıktısını ekrana yazdıramadım 10.07 tarihine halledilir
+4)Şuanki UI sadece işlemler yapılsın diye böyle kötü düzelecek
+5)Daha fazla topluluktan yardım alıncak
+
+*/
+
 const accounts = [
   {
     iban: "trxx yyyy xxxx yyyy",
